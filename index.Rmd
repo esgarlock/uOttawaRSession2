@@ -2,9 +2,12 @@
 title: 'R Part 2: Basic Data Tidying'
 author: "Emma Garlock"
 date: "June 12th, 2025"
-output:
+output: 
   html_document:
-    df_print: paged
+    theme: journal
+    toc: yes
+    toc_float:
+      collapsed: true
 ---
   
 # Introduction  
@@ -12,7 +15,7 @@ output:
 > In this session, we are going to learn some basics about cleaning data in R.
 > The folder for this session is available at [https://tinyurl.com/45vxsawu](https://tinyurl.com/45vxsawu).  
 > 
-> ![QR](notebook_images/QR.png)
+> ![](notebook_images/QR.png)
 >
 > For this session you will need:   
 > 
@@ -86,7 +89,9 @@ To get extra functions, you need to download packages. Read more about functions
 ## Working Directory 
 First, we are going to set ourselves up in a working directory.  
 
-1. Save this file (If you've made a new one, if you've downloaded the whole folder, the file should already be in the right place) to somewhere that makes sense, this should be the same location where you have the data stored for this session. See the example below. 
+*Note: if you downloaded the whole folder, and you opened one of the provided files, ignore the advice about where to save things. It should all be organized already*   
+
+1. Save the R notebook or R Script file to somewhere that makes sense, this should be the same location where you have the data stored for this session. See the example below. 
 ![FileSetUp](notebook_images/FileSetUp.png)
 
 2. Select `"Session"` from the top menu bar, then `"Set working directory"` then `"to Source file location"`. The directory should now be printed on the top of the console. See the example below.    
@@ -113,7 +118,7 @@ library(tidyverse)
 ## Upload Data 
 Now, we can load our data, and assign it the name `scihub_df` Then take a look at the first few rows using the `head()` function.There is also a `tail()` function to see the last rows. For more info on uploading data and the different formats you can use, check out [this](https://intro2r.com/importing-data.html) 
 
-I have elected to locate my date by specifying a file path. You could also do it like `scihub_df=read.csv(file.choose())` to open up a file explorer. 
+I have elected to locate my data by specifying a file path. You could also do it like `scihub_df=read.csv(file.choose())` to open up a file explorer. 
 ```{r}
 #upload the dataset, its located in the data file
 scihub_df=read.csv("data/SciHub_SampleData.csv") 
