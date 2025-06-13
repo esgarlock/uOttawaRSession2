@@ -2,12 +2,16 @@
 title: 'R Part 2: Basic Data Tidying'
 author: "Emma Garlock"
 date: "June 12th, 2025"
-output: 
+output:
   html_document:
     theme: journal
-    toc: yes
+    toc: true
     toc_float:
       collapsed: true
+  pdf_document:
+    toc: true
+  word_document:
+    toc: true
 ---
   
 # Introduction  
@@ -38,7 +42,7 @@ output:
 > 
 > But first we are going to have a general orientation about R Studio. If you are going through this at a later date, you can watch [this](https://www.youtube.com/watch?v=FIrsOBy5k58) video. 
 
-When you first open are you should see this: 
+When you first open R you should see this: 
 
 ![RLanding](notebook_images/R_panel.png)
 Once you open a file, you should see this. 
@@ -248,6 +252,14 @@ head(scihub_df_reduced_time)
 
 
 There is also a `paste()` function in R. It's very similar to the concatenate in Excel, and you can learn more about it [here](https://www.digitalocean.com/community/tutorials/paste-in-r).
+
+Finally, you will probably want to save your work after everything. To do this, we can use the `write.csv()` function. 
+
+The format for this is `write.csv(data, filepath)`. After running this, you can check the file location to see if a new file has appeared. 
+```{r}
+write.csv(scihub_df_reduced,"data/scihub_df_reduced.csv")
+```
+
 
 # Bonus Content if we get time    
 ## Joins 
